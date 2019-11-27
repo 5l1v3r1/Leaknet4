@@ -1,0 +1,11 @@
+compile "de.golfgl.gdxgamesvcs:gdx-gamesvcs-core-gamejolt:$gamesvcsVersion"compile "de.golfgl.gdxgamesvcs:gdx-gamesvcs-core-gamejolt:$gamesvcsVersion:sources"    <uses-permission android:name="android.permission.INTERNET"/> gsClient.initialize(GdxGameSvcsApp.GAMEJOLT_APP_ID,                                                      GdxGameSvcsApp.GAMEJOLT_PRIVATE_KEY);gsClient.setUserName(com.google.gwt.user.client.Window.Location.
+            getParameter(GameJoltClient.GJ_USERNAME_PARAM));
+gsClient.setUserToken(com.google.gwt.user.client.Window.Location.
+            getParameter(GameJoltClient.GJ_USERTOKEN_PARAM));gsClient.setGjScoreboardMapper(new IGameServiceIdMapper<Integer>() {
+                @Override
+                public Integer mapToGsId(String independantId) {
+                    // your mapping here
+                    return ngId;
+                }
+            })
+         .setGjTrophyMapper(...); GameJoltClient.initializeOrResetEventKey()
